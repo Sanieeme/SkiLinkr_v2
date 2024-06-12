@@ -1,7 +1,4 @@
-![image](https://github.com/Sanieeme/SkiLinkr_v2/assets/138012421/162c6be6-dc56-4e4a-921e-cae8537dadcb)
-
-
-# SkiLinkr ~ *Bridging the Gap Between Talent and Opportunity*
+![image](https://github.com/Sanieeme/SkiLinkr_v2/assets/138012421/162c6be6-dc56-4e4a-921e-cae8537dadcb)~ *Bridging the Gap Between Talent and Opportunity*
 **INTRODUCTION:**
 
 **The Project**

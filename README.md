@@ -1,5 +1,5 @@
 # SkiLinkR ~ *Bridging the Gap Between Talent and Opportunity*
-***INTRODUCTION:***
+**INTRODUCTION:**
 
 **The Project**
 
@@ -9,25 +9,25 @@ The struggle of finding someone for household repairs is not easy but SkiLinkr i
 
 **Authors:**
 
-Shumani Simeli @[Shumani](url) : responsible for backend
+Shumani Simeli @[Shumani](https://discord.com/channels/@me/1232641128172486747/1250572748116463647) : responsible for backend
 
 Netshidzivhani Shonisani @[Shonisani](https://www.linkedin.com/in/shonisani-netshidzivhani-b7574a22a/) : Responsible for frontend
 
 lets connect on LinkedIn
 
-Blog Post
+**Blog PostI*
 
 These are the blog post that each member wrote on their own.
 
-Shumani`s aticle:[SkiLinkr](url)
+Shumani`s aticle:[SkiLinkr](https://discord.com/channels/@me/1232641128172486747/1250572748116463647)
 
 Shonisani`s aticle: [SkiLinkr](https://medium.com/@shoneesani/skilinkr-18a7fee2ce0c)
 
-Architecture
+**Architecture**
 
 ![image](https://github.com/Sanieeme/SkiLinkr_v2/assets/138012421/66a190ea-b456-409e-b725-3b1196d468b0)
 
-**#ACKNOWLEGEMENT**
+**ACKNOWLEGEMENT**
 
 
 ALX Technical Mentors: for the guidance since day one.
@@ -40,7 +40,8 @@ Netshidzivhani Shonisani: for the frontend on SkiLinkr.
 
 Iyoha Mavis: for backend and frontend advices.
 
-**#LICENSE**
+
+**LICENSE**
 
 MIT License
 

@@ -24,9 +24,11 @@ Shumani`s aticle:[SkiLinkr](url)
 Shonisani`s aticle: [SkiLinkr](https://medium.com/@shoneesani/skilinkr-18a7fee2ce0c)
 
 Architecture
+
 ![image](https://github.com/Sanieeme/SkiLinkr_v2/assets/138012421/66a190ea-b456-409e-b725-3b1196d468b0)
 
-#ACKNOWLEGEMENT
+**#ACKNOWLEGEMENT**
+
 
 ALX Technical Mentors: for the guidance since day one.
 
@@ -38,7 +40,7 @@ Netshidzivhani Shonisani: for the frontend on SkiLinkr.
 
 Iyoha Mavis: for backend and frontend advices.
 
-#LICENSE
+**#LICENSE**
 
 MIT License
 

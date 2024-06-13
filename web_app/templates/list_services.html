@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+{% block title %}listing service{% endblock %}
+{% block page_content %}
+<div class="post_form">
+    <div class="post_title">
+        <div style="font-size: 38px; font-weight: bold;">
+            List a Service
+        </div>
+        List your service for potential clients
+    </div>
+    <form method="POST" action="{{ url_for('views.services') }}">
+        {{ form.hidden_tag() }}
+        <div class="form-group">
+            {{ form.category.label }}
+            {{ form.category(class="form-control") }}
+            {% for error in form.category.error %}
+                <span class="error">
+                    {{ error }}
+                </span>
+            {% endfor %}
+        </div>
+        <div class="form-group">
+            {{ form.title.label }}
+            {{ form.title(class="form-control") }}
+            {% for error in form.title.error %}
+                <span class="error">
+                    {{ error }}
+                </span>
+            {% endfor %}
+        </div>
+        <div class="form-group">
+            {{ form.hourly_rate.label }}
+            {{ form.hourly_rate(class="form-control") }}
+            {% for error in form.hourly_rate.error %}
+                <span class="error">
+                    {{ error }}
+                </span>
+            {% endfor %}
+        </div>
+        <div class="form-group">
+            {{ form.availability.label }}
+            {{ form.availability(class="form-control") }}
+            {% for error in form.availability.error %}
+                <span class="error">
+                    {{ error }}
+                </span>
+            {% endfor %}
+        </div>
+        <div class="form-group">
+            {{ form.description.label }}
+            {{ form.description(class="form-control") }}
+            {% for error in form.description.error %}
+                <span class="error">
+                    {{ error }}
+                </span>
+            {% endfor %}
+        </div>
+        <button type="submit">Post</button>
+    </form>
+</div>
+{% endblock %}

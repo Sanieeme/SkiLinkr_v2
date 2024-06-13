@@ -1,0 +1,129 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+}
+body {
+    margin: 0;
+    padding: 0;
+    color: #484848;
+    font-size: 14px;
+    font-family: Circular, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    background-color: #f2ebdf;
+}
+
+#container {
+    min-height: 100%;
+}
+
+#main {
+    overflow: auto;
+    padding-bottom: 399px;
+
+}
+
+nav {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    background-color: #f2ebdf;
+    height: 68px;
+    border-bottom: 1px #c2c2c2 solid;
+}
+.menu ul{
+    padding: 10px;
+    height: 71%;
+    width: 470px;
+    list-style: none;
+    display: flex;
+    gap: 25px;
+    flex-direction: row;
+    text-align: center;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-top: 0;
+}
+.logo {
+    margin-right: 20%;
+    margin-top: 15px;
+    width: 142px;
+    height: 60px;
+    background-image: url('../images/logo-no-background.png'); 
+    background-size: contain; 
+    background-repeat: no-repeat;
+}
+.logo img{
+    padding-top: 20px;
+    width: 100%;
+}
+nav input {
+    margin-left: 35px;
+    margin-top: 15px;
+    height: 35px;
+    width: 50%;
+    font-size: larger;
+    padding-left: 10px;
+}
+nav button {
+    height: 37px;
+    margin-top: 15px;
+    width: 84px;
+    background-color: #f2ebdf;
+    color: #1b1b1b;
+    font-size: 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+nav button:hover{
+    background-color: #5f5e5e;
+    color: #f2ebdf;
+    border: #f2ebdf;
+}
+.menu ul li, li a, button a{
+    text-decoration: none;
+    color: #1b1b1b;
+    margin-top: 10px;
+    font-size: 14px;
+    cursor: pointer;
+}
+.menu ul li:hover{
+    border-bottom: 3px solid #5f5e5e;
+    font-weight: bold;
+    height: 3vh;
+}
+#footer {
+    position: relative;
+    margin: auto;
+    color: #484848;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    margin-top: -399px;
+    height: 399px; 
+    background-color: #b8b5ab;
+    padding: 30px;
+    box-sizing: border-box;
+    text-align: center;
+  }
+  .footer-sections {
+    display: flex;
+    justify-content: center;
+  }
+  .footer-content {
+    width: 22%;
+  }  
+  .footer-content ul{
+    list-style-type: none;
+    text-align: center;
+    cursor: pointer;
+  }
+  .footer-content ul li{
+    padding: 7px;
+  }
+  a{
+    text-decoration: none;
+  }

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../static/styles/forms.css">
+        <title>login-Skilinkr</title>
+    </head>
+    <body>
+        <header>
+                {% with messages = get_flashed_messages(with_categories=true) %}
+                    {% if messages %}
+                        {% for category, message in messages %}
+                            <div class="alert alert-success">{{ message }}</div>
+                        {% endfor %}
+                    {% endif %}
+                {% endwith %}
+        </header>
+        <div class="container">
+            <h1>SkiLinkr</h1>
+            <form method="POST" action="">
+                {{ form.hidden_tag() }}
+                <div>
+                    {{ form.email.label }}<br>
+                    {{ form.email(size=32) }}
+                    {% for error in form.email.error %}
+                        <span>
+                            {{ error }}
+                        </span>
+                    {% endfor %}
+                </div>
+                <div>
+                    {{ form.password.label }} <br>
+                    {{ form.password(size=32)}}
+                    {% for error in form.password.error %}
+                    <span>
+                        {{ error }}
+                    </span>
+                    {% endfor %}
+                </div>
+                <p>{{ form.remember() }} {{ form.remember.label }}</p>
+                <p>{{ form.submit(class="btn") }}</p>
+            </form>
+        </div>
+        <div class="container2">
+            <p>Dont have an account? <a href="/signup" style="text-decoration: none;">Signup</a></p>
+        </div>
+    </body>
+</html>

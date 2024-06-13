@@ -1,0 +1,126 @@
+body {
+    padding: 5vh;
+}
+
+.filter {
+    position: fixed;
+    display: grid;
+    align-items: center;
+    text-align: center;
+    width: 45vh;
+    height: 300px;
+}
+.form-input {
+    width: 100%;
+    height: 4vh;
+}
+.form-group {
+    height: 9vh;
+    font-weight: bold;
+}
+.filter button{
+    margin-top: 20px; 
+    width: 100%;
+    height: 7vh;
+    background-color: #1b1b1b;
+    color: #f2ebdf;
+    font-size: large;
+    border-radius: 5px;
+    cursor: pointer;
+}
+button:hover{
+    background-color: #5f5e5e;
+    color: #1b1b1b;
+    transition: 0.5s;
+}
+button:active {
+    background-color: #1b1b1b;
+    color: #f2ebdf;
+}
+.results {
+    display: flex;
+    padding-left: 13vh;
+    column-gap: 10vh;
+    flex-wrap: wrap;
+    margin: auto;
+    width: 128vh;
+    height: 879.59px;
+}
+.results .contents {
+    gap: 20px;
+    padding: 10px;
+    width: 40%;
+    height: 47%;
+}
+.profile-card {
+    border: 1px solid white;
+    margin: auto;
+    background: #f2ebdf;
+    border-radius: 5px;
+    width: 350px;
+    text-align: center;
+}
+.cover-photo {
+    background: #1b1b1b;
+    height: 160px;
+    width: 100%;
+    border-radius: 5px 5px 0 0;
+}
+.profile {
+    height: 120px;
+    width:120px;
+    border-radius: 0%;
+    margin: 93px 0 0 -175px;
+    border: 5px solid #f2ebdf;
+    padding: 7px;
+    background: #292343;
+}
+.profile-name {
+    font-size: 25px;
+    font-weight: bold;
+    margin: 27px 0 0 120px;
+}
+.title {
+    margin-top: 35px;
+    line-height: 21px;
+}
+.results button {
+    margin: 5px 0 5px 0;
+}
+.message-btn, .view-btn {
+    background: #292343;
+    border: 1px solid #484848;
+    padding: 10px 25px;
+    color: #f2ebdf;
+    border: 3px;
+    cursor: pointer;
+}
+.message-btn {
+    margin-left: 10px;
+    background: transparent;
+    color: #292343;
+}
+.message-btn:hover {
+    color: #f2ebdf;
+    background: #292343;
+    transition: 0.5s;
+}
+.view-btn:hover {
+    color: #f2ebdf;
+    background: #292343;
+    transition: 0.5s;
+}
+.contents i{
+    padding-left: 20px;
+    font-size: 20px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+.contents i:hover {
+    color: #292343;
+
+}
+.results-container {
+    padding-left: 15vh;
+}

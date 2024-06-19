@@ -1,8 +1,64 @@
 {% extends "base.html" %}
 {% block title %}services{% endblock %}
+{% block link%}<link rel="stylesheet" href="../static/styles/expert.css">{% endblock %}
 {% block page_content %}
-{% for request in requests %}
-    {{ request.title }}
-    {{ request.description }}
-{% endfor %}
+<div class="main">
+    <div class="filter">        
+        <form method="post" action="">
+            {{ form.hidden_tag() }}
+            <div class="form-group">
+                {{ form.category.label }} <br>
+                {{ form.category(class="form-input") }}
+                {% for error in form.category.error %}
+                    <span class="error">
+                        {{ error }}
+                    </span>
+                {% endfor %}
+            </div>
+            <div class="form-group">
+                {{ form.availability.label }} <br>
+                {{ form.availability(class="form-input") }}
+                {% for error in form.availability.error %}
+                    <span class="error">
+                        {{ error }}
+                    </span>
+                {% endfor %}
+            </div>
+            <div class="form-group">
+                {{ form.experience.label }} <br>
+                {{ form.experience(class="form-input") }}
+                {% for error in form.experience.error %}
+                    <span class="error">
+                        {{ error }}
+                    </span>
+                {% endfor %}
+            </div>
+            <button type="submit">Filter</button>
+        </form>
+    </div>
+    <div class="results-container">
+        <div class="results" id="id-cards">
+            {% for freelancer in freelancers %}
+            <div class="contents all electrician full-time 2">
+                <div class="profile-card" id="posts-container">
+                    <div class="cover-photo">
+                        <img src="../static/images/l60Hf.png" class="profile" alt="profile_picture">
+                    </div>
+                    <div class="profile-name"> {{ freelancer.username }}</div>
+                    <p class="title">{{ freelancer.service }}</p>
+                    <button class="view-btn">View profile</button>
+                    <button class="message-btn">Message</button>
+                    <h3>R{{ freelancer.hourly }}/hr</h3>
+                    <div>
+                        <i class="fab fa-facebook-f"></i>
+                        <i class="fab fa-youtube"></i>
+                        <i class="fab fa-instagram"></i>
+                        <i class="fab fa-twitter"></i>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
 {% endblock %}

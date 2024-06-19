@@ -3,6 +3,7 @@ from .forms import *
 from .models import *
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import login_user, current_user, logout_user, login_required
+from datetime import datetime
 
 views = Blueprint('views', __name__)
 
@@ -20,7 +21,6 @@ def login():
             flash('Welcome back', 'success')
             return redirect(url_for('views.home'))
         else:
-            print(form.error)
             flash('Login Unsuccessful. Please check email and password', 'error')
     return render_template('login.html', form=form)
 
@@ -76,7 +76,9 @@ def request_service():
     if form.validate_on_submit():
         request = Request(
             title=form.title.data, 
-            budget=form.budget.data, 
+            budget=form.budget.data,
+            username=current_user.username,
+            date =datetime.date(), 
             due_date=form.due_date.data, 
             working_hours=form.working_hours.data, 
             description=form.description.data, 
@@ -97,16 +99,24 @@ def logout():
 @login_required
 def requests():
     requests = Request.query.all()
-    return render_template("requests.html", requests=requests)
+    form = Filterrequest()
+    filtered_list = []
+    if form.validate_on_submit():
+        for request in requests:
+            if form.due_date.data == request.due_date or form.due_date.data == None:
+                if form.working_hours.data == 'Anytime' or form.working_hours.data == request.working_hours:
+                    if form.budget.data == None or form.budget.data == request.budget:
+                        filtered_list.append(request)
+        return render_template('requests.html', requests=filtered_list, form=form)
+    return render_template("requests.html", requests=requests, form=form)
 
 @views.route('/freelancers', methods=['GET', 'POST'])
 @login_required
 def freelancers():
     filtered_list = []
-    form = Filterform()
+    form = Filterexperts()
     freelancers = User.query.filter_by(is_freelancer=True).all()
     if form.validate_on_submit(): 
-        print(f'{form.category.data} {form.availability.data} {form.experience.data}')
         for freelancer in freelancers:
             if form.category.data == 'all' or form.category.data == freelancer.service:
                 if form.availability.data == 'anytime' or form.availability.data == freelancer.availablility:
@@ -114,7 +124,3 @@ def freelancers():
                         filtered_list.append(freelancer)
         return render_template('freelancers.html', freelancers=filtered_list, form=form)
     return render_template('freelancers.html', freelancers=freelancers, form=form)
-
-@views.route('/about')
-def about():
-    return render_template("about.html")

@@ -76,7 +76,7 @@ class RequestForm(FlaskForm):
     budget = DecimalField('Budget', validators=[DataRequired()], places=2)
     submit = SubmitField('Submit')
 
-class Filterform(FlaskForm):
+class Filterexperts(FlaskForm):
     category = SelectField('Category', choices=[
         ('all', 'All'),  
         ('welding', 'Welding'), 
@@ -101,3 +101,13 @@ class Filterform(FlaskForm):
         ('junior', 'Junior'), 
         ('mid', 'Mid'), 
         ('senior', 'Senior')])
+
+class Filterrequest(FlaskForm):
+    due_date = DateField('Due Date', format='%Y-%m-%d')
+    working_hours = SelectField('Working hours', choices=[
+        ('1', 'Anytime'), 
+        ('2', '08:00-12:00'), 
+        ('3', '13:00-15:00'), 
+        ('4','16:00-20:00'), 
+        ('5','Other')])
+    budget = DecimalField('Budget', validators=[DataRequired()], places=2)

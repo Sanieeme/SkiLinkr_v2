@@ -1,8 +1,57 @@
 {% extends "base.html" %}
 {% block title %}requests{% endblock %}
+{% block link %}
+<link rel="stylesheet" href="../static/styles/request.css">
+{% endblock %}
 {% block page_content %}
-{% for request in requests %}
-    {{ request.title }}
-    {{ request.description }}
-{% endfor %}
+<div class="main">
+    <div class="filter">        
+        <form method="post" action="">
+            {{ form.hidden_tag() }}
+            <div class="form-group">
+                {{ form.budget.label }} <br>
+                {{ form.budget(class="form-input") }}
+                {% for error in form.budget.error %}
+                    <span class="error">
+                        {{ error }}
+                    </span>
+                {% endfor %}
+            </div>
+            <div class="form-group">
+                {{ form.working_hours.label }} <br>
+                {{ form.working_hours(class="form-input") }}
+                {% for error in form.working_hours.error %}
+                    <span class="error">
+                        {{ error }}
+                    </span>
+                {% endfor %}
+            </div>
+            <div class="form-group">
+                {{ form.due_date.label }} <br>
+                {{ form.due_date(class="form-input") }}
+                {% for error in form.due_date.error %}
+                    <span class="error">
+                        {{ error }}
+                    </span>
+                {% endfor %}
+            </div>
+            <button type="submit">Filter</button>
+        </form>
+    </div>
+    <div class="results-container">
+        {% for request in requests %}
+        <div class="results">
+            <h1>{{ request.title }}</h1>
+            <h2>{{ request.username }}</h2>
+            <div style="width: 125vh; border: 1px solid; text-align: center;">
+                {{ request.description }}
+            </div>
+            <p>Posted: {{ request.date }}</p>
+            <p>{{ request.due_date }}</p>
+            <p>{{ request.working_hours }}</p>
+            <p>{{ request.budget }}</p>
+        </div>
+        {% endfor %}
+    </div>
+</div>
 {% endblock %}

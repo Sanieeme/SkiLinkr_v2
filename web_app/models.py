@@ -1,6 +1,6 @@
 from . import db
 from flask_login import UserMixin
-from datetime import datetime
+
 
 
 class User(db.Model, UserMixin):
@@ -33,6 +33,8 @@ class Service(db.Model):
 class Request(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(100), nullable=False)
+    username = db.Column(db.String(100))
+    date = db.Column(db.DateTime)
     description = db.Column(db.Text, nullable=False)
     budget = db.Column(db.Float, nullable=False)
     due_date = db.Column(db.DateTime, nullable=False)
